@@ -469,9 +469,9 @@ contains
  do iGRU = 1, size(gru_struc)
 
   ! GRU info
-  err = nf90_put_var(ncid, gruVarID, gru_struc(iGRU)%gruId, start=(/iGRU/))
+  err = nf90_put_var(ncid, gruVarID, gru_struc(iGRU)%gru_id, start=(/iGRU/))
   if (err/=nf90_NoErr) then; message=trim(message)//'nf90_write_gruVar'; call netcdf_err(err,message); return; end if
-  err = nf90_put_var(ncid, gruIdVarID, gru_struc(iGRU)%gruId, start=(/iGRU/))
+  err = nf90_put_var(ncid, gruIdVarID, gru_struc(iGRU)%gru_id, start=(/iGRU/))
   if (err/=nf90_NoErr) then; message=trim(message)//'nf90_write_gruIdVar'; call netcdf_err(err,message); return; end if
 
   ! HRU info
